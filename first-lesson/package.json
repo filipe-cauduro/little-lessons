@@ -1,0 +1,22 @@
+{
+  "name": "aulinhas",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "@eslint/js": "^9.20.0",
+    "@types/node": "^22.13.4",
+    "prettier": "^3.5.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.3",
+    "vitest": "^3.0.6"
+  },
+  "scripts": {
+    "dev": "ts-node ./src/index.ts",
+    "build": "tsc",
+    "start": "node ./dist/index.js",
+    "preview": "yarn build && yarn start",
+    "format": "prettier . --write",
+    "test": "vitest --watch"
+  }
+}
