@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest"
 import { containsWord } from "./first-assignment"
 
-describe("Does the list contains a string which includes the guiven text?", () => {
+describe("Does the list contains a string which includes the given text?", () => {
   it("should return true if word is in text on text list", () => {
     const textList = ["literally any", "text to", "test cool", "stuff!"]
     const wordToSearch = "stuff"
