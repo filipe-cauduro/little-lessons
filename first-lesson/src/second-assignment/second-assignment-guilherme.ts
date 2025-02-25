@@ -1,14 +1,13 @@
 const averagePositiveNumbers = (numbers: number[]): number => {
   const positiveNumbers = numbers.filter(
-    (x) => typeof x == "number" && !isNaN(x) && x >= 0,
+    (num) => num >= 0 && !Number.isNaN(num),
   )
 
-  if (positiveNumbers.length < 1)
+  if (positiveNumbers.length === 0)
     throw new Error("The informed list doesn't contain any positive number")
 
   return (
-    positiveNumbers.reduce((prev, acc) => prev + acc, 0) /
-    positiveNumbers.length
+    positiveNumbers.reduce((acc, num) => acc + num, 0) / positiveNumbers.length
   )
 }
 

@@ -8,7 +8,9 @@ type ImportedAssignment = {
 
 describe("What's the average of the positive numbers in the list?", async () => {
   const dir = await readdir(join(__dirname))
-  const assignments = dir.filter((x) => x.match(/second-assignment\.[j|t]s$/))
+  const assignments = dir.filter((x) =>
+    x.match(/second-assignment-.+\.[j|t]s$/),
+  )
 
   for (const assignmentPath of assignments) {
     const importedFile: ImportedAssignment = await import(`./${assignmentPath}`)

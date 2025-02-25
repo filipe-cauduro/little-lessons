@@ -8,7 +8,7 @@ type ImportedAssignment = {
 
 describe("Does the list contains a string which includes the guiven text?", async () => {
   const dir = await readdir(join(__dirname))
-  const assignments = dir.filter((x) => x.match(/first-assignment\.[j|t]s$/))
+  const assignments = dir.filter((x) => x.match(/first-assignment-.+\.[j|t]s$/))
 
   for (const assignmentPath of assignments) {
     const importedFile: ImportedAssignment = await import(`./${assignmentPath}`)
