@@ -1,0 +1,21 @@
+.sidebar {
+  grid-area: sidebar;
+  padding-top: 20%;
+  display: flex;
+  flex-direction: column;
+}
+
+.navigation-link {
+  height: 50px;
+  width: 100%;
+  background-color: #354F52;
+  font-size: 24px;
+  color: #CAD2C5;
+  text-align: center;
+  cursor: pointer;
+}
+
+.navigation-link-active {
+  background-color: #D9D9D9;
+  color: #354F52;
+}

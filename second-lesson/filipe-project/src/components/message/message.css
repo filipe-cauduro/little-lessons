@@ -1,0 +1,28 @@
+.message-dialog-other-user-container {
+    display: flex;
+    width: 100%;
+}
+
+.message-dialog-other-user {
+    background-color: #84A98C;
+    border: #84A98C 2px;
+    border-radius: 8px;
+    font-size: larger;
+    padding: 1% 2%;
+    width: 70%;
+}
+
+.message-dialog-current-user-container {
+    display: flex;
+    flex-direction: row-reverse;
+    width: 100%;
+}
+
+.message-dialog-current-user {
+    background-color: #CAD2C5;
+    border: #CAD2C5 2px;
+    border-radius: 8px;
+    font-size: larger;
+    padding: 1% 2%;
+    width: 70%;
+}

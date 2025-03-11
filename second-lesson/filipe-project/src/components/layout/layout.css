@@ -1,0 +1,7 @@
+.template-grid {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 20% 80%;
+  grid-template-areas: "sidebar page";
+  background-color: #2f3e46;
+}
