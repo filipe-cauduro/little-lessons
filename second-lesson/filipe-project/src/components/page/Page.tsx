@@ -6,6 +6,9 @@ import { Dialog } from "../../pages/dialog/Dialog";
 const Page: FC = () => (
   <div className="page">
     <Dialog />
+    {/* <ExampleUseMemo /> */}
+    {/* <ExampleUseReducer /> */}
+    {/* <ExampleUseEffect /> */}
   </div>
 );
 

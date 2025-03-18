@@ -1,0 +1,30 @@
+.use-memo-container {
+  display: flex;
+  flex-direction: column;
+  padding-left: 5%;
+}
+
+.re-render-button {
+  width: 200px;
+  color: #cad2c5;
+  background-color: #2f3e46;
+  border: 0;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.re-render-input {
+  width: 250px;
+  background-color: #cad2c5;
+  color: #2f3e46;
+  font-size: 18px;
+  border-radius: 5px;
+  border: 0;
+}
+
+.re-render-container {
+  display: flex;
+  width: 35%;
+  justify-content: space-between;
+}

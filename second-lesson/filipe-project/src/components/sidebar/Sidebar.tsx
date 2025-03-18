@@ -1,11 +1,13 @@
 import { FC } from "react";
 
-import "./sidebar.css"
+import "./sidebar.css";
 
-const Sidebar: FC = () => <div className="sidebar">
+const Sidebar: FC = () => (
+  <div className="sidebar">
     <div className="navigation-link navigation-link-active">ChatGPT</div>
     <div className="navigation-link">Ollama</div>
     <div className="navigation-link">Deepseek</div>
-</div>;
+  </div>
+);
 
 export { Sidebar };

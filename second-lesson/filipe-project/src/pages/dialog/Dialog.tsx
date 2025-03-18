@@ -23,7 +23,7 @@ const Dialog: FC = () => {
     <div className="dialog-page-container">
       <div className="dialog-container">
         {messages.map((x, i) => (
-          <Message {...x} key={i} />
+          <Message {...x} key={i}/>
         ))}
       </div>
       <div className="message-input-container">
