@@ -1,0 +1,47 @@
+.toast-notification-container {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+
+  border: 2px solid;
+  border-radius: 8px;
+
+  h4,
+  p {
+    margin: 0;
+  }
+}
+
+.toast-notification-container + .toast-notification-container {
+  margin-top: 4px;
+}
+
+.toast-notification-container.success {
+  background-color: #84a98c;
+  border-color: #354f52;
+}
+
+.toast-notification-container.danger {
+  background-color: #db5757;
+  border-color: #ad4242;
+}
+
+.toast-notification-container.warn {
+  background-color: #fec450;
+  border-color: #f9b326;
+}
+
+.toast-notification-container.info {
+  background-color: #cad2c5;
+  border-color: #94a08c;
+}
+
+.toast-notification-close {
+  position: fixed;
+  right: 12px;
+  margin-top: -12px;
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+}

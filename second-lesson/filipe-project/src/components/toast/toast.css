@@ -1,0 +1,9 @@
+.toast-section {
+    width: 25%;
+    min-width: 250px;
+    position: absolute;
+    right: 12px;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+}
