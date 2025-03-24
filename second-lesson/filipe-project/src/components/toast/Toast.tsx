@@ -10,7 +10,7 @@ const Toast: FC = () => {
   return (
     <div className="toast-section">
       {notifications.map((x) => (
-        <Notification {...x} />
+        <Notification {...x} key={x.id} />
       ))}
     </div>
   );
