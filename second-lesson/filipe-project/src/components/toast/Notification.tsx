@@ -1,21 +1,34 @@
-import { FC, useContext } from "react";
+import { FC, useContext, useEffect, useState } from "react";
 import { getToastNotificationDefaultText } from "./utils";
 import { X } from "@mynaui/icons-react";
 
 import "./notification.css";
-import {
-  INotification,
-  NotificationContext,
-} from "../../contexts/NotificationContextProvider";
+import { NotificationContext } from "../../contexts/NotificationContextProvider";
+import { INotification } from "../../hooks/useNotificationActions";
 
-const Notification: FC<INotification> = ({
-  id,
-  title,
-  content,
-  type,
-  progress,
-}) => {
+const notificationDurationSeconds = 5;
+
+const Notification: FC<INotification> = ({ id, title, content, type }) => {
   const titleText = getToastNotificationDefaultText(type);
+
+  const [progress, setProgress] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (isPaused) return;
+
+      setProgress((progress) => {
+        const updatedProgress = progress + 1 / 10;
+
+        if (updatedProgress >= 1) dispatch({ action: "remove", body: { id } });
+
+        return updatedProgress;
+      });
+    }, (notificationDurationSeconds * 1000) / 10);
+
+    return () => clearInterval(interval);
+  }, [isPaused]);
 
   const { dispatch } = useContext(NotificationContext);
 
@@ -23,8 +36,8 @@ const Notification: FC<INotification> = ({
     <>
       <div
         className={`toast-notification-container ${type}`}
-        onMouseEnter={() => dispatch({ action: "pause", body: { id } })}
-        onMouseLeave={() => dispatch({ action: "play", body: { id } })}
+        onMouseEnter={() => setIsPaused(true)}
+        onMouseLeave={() => setIsPaused(false)}
       >
         <button
           className="toast-notification-close"
@@ -40,9 +53,7 @@ const Notification: FC<INotification> = ({
             minWidth: `${progress * 100}%`,
             height: "8px",
           }}
-        >
-          {progress}
-        </span>
+        ></span>
       </div>
     </>
   );

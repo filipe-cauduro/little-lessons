@@ -12,6 +12,7 @@ const ExampleUseContext = () => {
   const onClick = () => {
     try {
       const obj = JSON.parse(text);
+      
       if (!obj) return;
 
       dispatch({ action: "add", body: obj as ToastNotification });
@@ -19,7 +20,7 @@ const ExampleUseContext = () => {
       console.error(e);
       return;
     }
-  };
+  };  
 
   return (
     <>
